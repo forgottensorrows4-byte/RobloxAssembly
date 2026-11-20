@@ -1,6 +1,7 @@
 --!native
 --!optimize 2
 --!strict
+-- Module Script
 local CPU = {}
 
 local registers: { [string]: { val: number, bits: number } } = {
