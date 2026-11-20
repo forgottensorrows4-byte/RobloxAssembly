@@ -1,7 +1,14 @@
 # RobloxAssembly
+
 Custom VM with a Assembler (Based off custom consoles like rasberry pi)
 
 Basic Computer with a CPU,GPU,RAM,Screen,Assembler
+## Setup
+
+1. Download **`Roblox Assembly.rbxl`** from the repository.
+2. Open the file in **Roblox Studio**.
+3. Press **Play** (or edit the Example script in `Runtime`) to run the VM.
+
 ## Specs
 - **CPU**: 64-bit, 32-bit, 16-bit, and 8-bit x86-style registers (`RAX`–`R15`, `RIP`, etc....) (Modifiable)
 - **RAM**: 2 KB byte-addressable memory (`0–255 per ``address`) (Ram size is modifiable)
@@ -16,7 +23,7 @@ Basic Computer with a CPU,GPU,RAM,Screen,Assembler
 ## Basic Syntax
 Instructions end with `;` and comments use `//`.
 
-```text
+```asm
 // Example: draw a diagonal line
 PIX C, 0, 255, 100;
 MOV RAX, 0;
