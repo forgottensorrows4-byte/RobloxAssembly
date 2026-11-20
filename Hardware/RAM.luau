@@ -1,6 +1,7 @@
 --!native
 --!optimize 2
 --!strict
+-- Module Script
 local RAM = {}
 
 local kibibytes = 2 * 1024 -- a kikibyte is 1024 bytes and a kilobyte is 1000 bytes theres a diffrence lol
