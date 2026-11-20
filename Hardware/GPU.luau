@@ -1,6 +1,7 @@
 --!native
 --!optimize 2
 --!strict
+-- Module Script
 local GPU = {}
 
 GPU.h = 32 -- screen height in pixels
