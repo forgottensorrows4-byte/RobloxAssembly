@@ -9,6 +9,10 @@ Basic Computer with a CPU,GPU,RAM,Screen,Assembler
 2. Open the file in **Roblox Studio**.
 3. Press **Play** (or edit the Example script in `Runtime`) to run the VM.
 
+1. If youre making a custom screen check the instructions in boot
+2. Paste the scripts into correct folders and change the module acceses if needed
+3. Change the ImageLabel ResamplerMode to Pixelated (`Enum.ResamplerMode.Pixelated`)
+
 ## Specs
 - **CPU**: 64-bit, 32-bit, 16-bit, and 8-bit x86-style registers (`RAX`–`R15`, `RIP`, etc....) (Modifiable)
 - **RAM**: 2 KB byte-addressable memory (`0–255 per ``address`) (Ram size is modifiable)
