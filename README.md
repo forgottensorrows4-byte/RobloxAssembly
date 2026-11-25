@@ -47,4 +47,5 @@ PIX S;
 - **Subroutines**:    `CALL`, `RET`
 - **Bitwise**:        `AND`, `OR`, `XOR`, `NOT`, `SHL`, `SHR`
 - **Graphics**:       `PIX C` (color), `PIX D` (draw), `PIX S` (display written pixels)
-- **System**          `HLT` (Default 0.1, Minimum 0.015//In Seconds) 
+- **System**          `HLT` (Default 0.1, Minimum 0.015//In Seconds)
+- (Check What Instructions do inside ASM (**based off x86 asm**) 
