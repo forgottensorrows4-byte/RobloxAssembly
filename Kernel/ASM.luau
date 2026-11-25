@@ -28,7 +28,6 @@ local function resolve(val: any): number
 	return tonumber(val) or 0
 end
 
--- func
 local function resetSystem()
 	RAM.Clear()
 	CPU.Reset()
@@ -37,6 +36,7 @@ local function resetSystem()
 end
 
 -- func
+
 function ASM.Parse(code: string): ({ { any } }, { [string]: number })
 	local instructions: { { any } } = {}
 	local labels: { [string]: number } = {}
