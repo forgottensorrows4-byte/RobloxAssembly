@@ -8,7 +8,7 @@ Basic Computer with a CPU,GPU,RAM,Screen,Assembler
 1. Download **`Roblox Assembly.rbxl`** from the repository.
 2. Open the file in **Roblox Studio**.
 3. Press **Play** (or edit the Example script in `Runtime`) to run the VM.
-
+## Custom Setup
 1. If youre making a custom screen check the instructions in boot
 2. Paste the scripts into correct folders and change the module acceses if needed
 3. Change the ImageLabel ResamplerMode to Pixelated (`Enum.ResamplerMode.Pixelated`)
