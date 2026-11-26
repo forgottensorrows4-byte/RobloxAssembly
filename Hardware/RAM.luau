@@ -48,9 +48,4 @@ function RAM.Pop()
 	return val
 end
 
-
-return RAM
-
-
-
 return RAM
