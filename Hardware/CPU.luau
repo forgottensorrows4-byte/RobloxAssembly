@@ -1,11 +1,10 @@
 --!native
 --!optimize 2
 --!strict
--- Module Script
 local CPU = {}
 
-local registers: { [string]: { val: number, bits: number } } = {
-	-- 64-bit General Purpose Registers
+local registers: { [string]: { val: number, bits: number, maxVal: number? } } = {
+	-- 64-bit Registers
 	RAX = { val = 0, bits = 64 }, RBX = { val = 0, bits = 64 },
 	RCX = { val = 0, bits = 64 }, RDX = { val = 0, bits = 64 },
 	RSI = { val = 0, bits = 64 }, RDI = { val = 0, bits = 64 },
@@ -27,7 +26,7 @@ local registers: { [string]: { val: number, bits: number } } = {
 	SI  = { val = 0, bits = 16 }, DI  = { val = 0, bits = 16 },
 	SP  = { val = 0, bits = 16 }, BP  = { val = 0, bits = 16 },
 
-	-- 8-bit High & Low Registers
+	-- 8-bit Registers
 	AL  = { val = 0, bits = 8 },  AH  = { val = 0, bits = 8 },
 	BL  = { val = 0, bits = 8 },  BH  = { val = 0, bits = 8 },
 	CL  = { val = 0, bits = 8 },  CH  = { val = 0, bits = 8 },
@@ -35,16 +34,19 @@ local registers: { [string]: { val: number, bits: number } } = {
 	SIL = { val = 0, bits = 8 },  DIL = { val = 0, bits = 8 },
 	SPL = { val = 0, bits = 8 },  BPL = { val = 0, bits = 8 },
 
-	-- 64-bit IP
+	-- 64-bit IP (program counter)
 	RIP = { val = 1, bits = 64 },
 }
 
 CPU.registers = registers
-
+for _, reg in registers do
+	if reg.bits < 64 then
+		reg.maxVal = 2 ^ reg.bits
+	end
+end
 function CPU.Exists(name: any): boolean
 	return type(name) == "string" and registers[name] ~= nil
 end
-
 function CPU.Get(name: string): number
 	local reg = registers[name]
 	return if reg then reg.val else 0
@@ -53,10 +55,8 @@ end
 function CPU.Set(name: string, val: number)
 	local reg = registers[name]
 	if not reg then return end
-
-	if reg.bits < 64 then
-		local maxVal = 2 ^ reg.bits
-		reg.val = val % maxVal
+	if reg.maxVal then
+		reg.val = val % reg.maxVal
 	else
 		reg.val = val
 	end
@@ -70,3 +70,4 @@ function CPU.Reset()
 end
 
 return CPU
+
