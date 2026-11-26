@@ -1,7 +1,6 @@
 --!native
 --!optimize 2
 --!strict
--- Module Script
 local RAM = {}
 
 local kibibytes = 2 * 1024 -- a kikibyte is 1024 bytes and a kilobyte is 1000 bytes theres a diffrence lol
@@ -48,6 +47,10 @@ function RAM.Pop()
 	buffer.writeu8(RAM.Stack, RAM.SP, 0)
 	return val
 end
+
+
+return RAM
+
 
 
 return RAM
